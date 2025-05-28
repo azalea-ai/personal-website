@@ -67,49 +67,6 @@
       color: #7c1c1c;
       font-weight: 500;
     }
-    .tiles {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-    .tile {
-      background: linear-gradient(135deg, #fff5f5, #fae1e1);
-      border: 1px solid #e0bdbd;
-      padding: 2rem;
-      border-radius: 16px;
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      font-size: 1.1rem;
-      font-weight: 500;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      position: relative;
-    }
-    .tile:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    .tile::before {
-      content: attr(data-icon);
-      font-size: 1.8rem;
-      color: #7c1c1c;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    .tile:hover::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: -2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #7c1c1c;
-      color: #fff;
-      padding: 0.3rem 0.6rem;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      white-space: nowrap;
-    }
     footer {
       background-color: #7c1c1c;
       color: #fff;
@@ -154,6 +111,19 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+    .notes-entry {
+      margin-bottom: 1.5rem;
+    }
+    .notes-entry time {
+      font-size: 0.9rem;
+      color: #7c1c1c;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .notes-entry p {
+      margin: 0;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -163,7 +133,7 @@
   </header>
   <nav>
     <a href="#about">About</a>
-    <a href="#interests">Blog</a>
+    <a href="#notes">Notes</a>
     <a href="#art">Art</a>
   </nav>
   <div class="container">
@@ -190,15 +160,19 @@
       </p>
     </section>
 
-    <section class="interests" id="interests">
-      <h2>Blog</h2>
-      <div class="tiles">
-        <div class="tile" data-icon="∑" data-tooltip="Musings on the infinite. Reflections on abstract beauty." onclick="window.location.href='blogs/mathematics.html'">Mathematics</div>
-        <div class="tile" data-icon="Ψ" data-tooltip="Dissections of logic, ethics, and meaning." onclick="window.location.href='blogs/philosophy.html'">Philosophy</div>
-        <div class="tile" data-icon="¶" data-tooltip="Language as soul. Literature as mirror." onclick="window.location.href='blogs/literature.html'">Literature</div>
-        <div class="tile" data-icon="◧" data-tooltip="Sketches, silence, and self-expression." onclick="window.location.href='blogs/art.html'">Art</div>
-        <div class="tile" data-icon="" data-tooltip="Humans, systems, and shared illusions." onclick="window.location.href='blogs/sociology.html'">Sociology</div>
-        <div class="tile" data-icon="" data-tooltip="Code meets thought. Machines meet meaning." onclick="window.location.href='blogs/cs-ai.html'">Computer Science & AI</div>
+    <section id="notes">
+      <h2>Notes from the Amalverse</h2>
+      <div class="notes-entry">
+        <time>May 28, 2025</time>
+        <p>"I think most people want to be extraordinary. I just want to be real and useful. Sometimes those overlap."</p>
+      </div>
+      <div class="notes-entry">
+        <time>May 26, 2025</time>
+        <p>"Maybe the truth isn’t a place, but a process. A rhythm you learn to dance to."</p>
+      </div>
+      <div class="notes-entry">
+        <time>May 24, 2025</time>
+        <p>"I like things that are messy and honest and unfinished. Maybe that’s what I am too."</p>
       </div>
     </section>
 
